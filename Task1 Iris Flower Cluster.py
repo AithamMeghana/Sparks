@@ -1,8 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
+#Author:- Aitham Meghana 
 
 import numpy as np
 import pandas as pd
@@ -12,15 +8,9 @@ from sklearn.datasets import load_iris
 from sklearn.cluster import KMeans
 
 
-# In[2]:
-
-
 # Load the iris dataset
 iris = load_iris()
 iris_df = pd.DataFrame(iris.data, columns=iris.feature_names)
-
-
-# In[3]:
 
 
 # Perform K-means clustering with different numbers of clusters
@@ -32,7 +22,6 @@ for n_clusters in range(1, max_clusters+1):
     wcss.append(kmeans.inertia_)
 
 
-# In[4]:
 
 
 # Plotting the within-cluster sum of squares (WCSS) to find the optimal number of clusters
@@ -44,8 +33,6 @@ plt.ylabel('WCSS')
 plt.show()
 
 
-# In[9]:
-
 
 # Perform K-means clustering with the optimal number of clusters
 optimal_clusters = 3
@@ -54,14 +41,12 @@ kmeans.fit(iris_df)
 cluster_labels = kmeans.labels_
 
 
-# In[6]:
-
 
 # Add cluster labels to the dataset
 iris_df['Cluster'] = cluster_labels
 
 
-# In[8]:
+
 
 
 # Visualize the clusters using pairplots
@@ -70,7 +55,7 @@ sns.pairplot(iris_df, hue="Cluster")
 plt.show()
 
 
-# In[16]:
+
 
 
 # Plot the clusters and centroids in a 2D scatter plot
@@ -83,7 +68,6 @@ plt.legend()
 plt.show()
 
 
-# In[ ]:
 
 
 
